@@ -4,4 +4,9 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+	#import <EngineRoom/EngineRoom.h>
+	#import <EngineRoom/logpoints_default.h>
+	#define NSLog LPLog
 #endif
+

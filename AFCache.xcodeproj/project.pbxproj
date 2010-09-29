@@ -36,6 +36,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		04FB83E61253FE2100F70439 /* EngineRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FB83DA1253FD8F00F70439 /* EngineRoom.framework */; };
 		0503090D1201780500E846EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E06CA412016EE600589399 /* libz.dylib */; };
 		050309651201AEF600E846EC /* AFRegexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 050309631201AEF600E846EC /* AFRegexString.h */; };
 		050309661201AEF600E846EC /* AFRegexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 050309641201AEF600E846EC /* AFRegexString.m */; };
@@ -184,6 +185,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		04FB83D91253FD8F00F70439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FB83D51253FD8F00F70439 /* EngineRoom-OSX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* EngineRoom.framework */;
+			remoteInfo = "EngineRoom-OSX";
+		};
+		04FB83DB1253FDA000F70439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FB83D51253FD8F00F70439 /* EngineRoom-OSX.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* EngineRoom-OSX */;
+			remoteInfo = "EngineRoom-OSX";
+		};
 		050309A31201B1AB00E846EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -249,6 +264,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04FB83D51253FD8F00F70439 /* EngineRoom-OSX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "EngineRoom-OSX.xcodeproj"; path = "../EngineRoom/EngineRoom-OSX/EngineRoom-OSX.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		050309631201AEF600E846EC /* AFRegexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFRegexString.h; path = 3rdparty/AFRegexString/AFRegexString.h; sourceTree = "<group>"; };
 		050309641201AEF600E846EC /* AFRegexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFRegexString.m; path = 3rdparty/AFRegexString/AFRegexString.m; sourceTree = "<group>"; };
 		050309841201B13600E846EC /* DemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppDelegate.h; path = demo/DemoAppDelegate.h; sourceTree = "<group>"; };
@@ -395,6 +411,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FB83E61253FE2100F70439 /* EngineRoom.framework in Frameworks */,
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				059A6DF111F88A6400A252AC /* SystemConfiguration.framework in Frameworks */,
 				05E06CA512016EE600589399 /* libz.dylib in Frameworks */,
@@ -413,6 +430,14 @@
 				05E0688311FF3E9500589399 /* libAFCacheOSXStatic.a */,
 				0503099D1201B1A400E846EC /* AFCacheDemoiOS.app */,
 				341DA57C12143186004D2F2D /* testafcache */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04FB83D61253FD8F00F70439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04FB83DA1253FD8F00F70439 /* EngineRoom.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -573,6 +598,7 @@
 		0867D691FE84028FC02AAC07 /* AFCache */ = {
 			isa = PBXGroup;
 			children = (
+				04FB83D51253FD8F00F70439 /* EngineRoom-OSX.xcodeproj */,
 				05E06C5512016DE000589399 /* 3rdparty */,
 				05E06A15120012BC00589399 /* README */,
 				05E06A14120012B000589399 /* CHANGES */,
@@ -823,6 +849,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				04FB83DC1253FDA000F70439 /* PBXTargetDependency */,
 			);
 			name = AFCacheOSX;
 			productInstallPath = "$(HOME)/Library/Frameworks";
@@ -837,7 +864,6 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "AFCache" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -848,6 +874,12 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* AFCache */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04FB83D61253FD8F00F70439 /* Products */;
+					ProjectRef = 04FB83D51253FD8F00F70439 /* EngineRoom-OSX.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* AFCacheOSX */,
@@ -861,6 +893,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04FB83DA1253FD8F00F70439 /* EngineRoom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EngineRoom.framework;
+			remoteRef = 04FB83D91253FD8F00F70439 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		050309991201B1A400E846EC /* Resources */ = {
@@ -1020,6 +1062,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		04FB83DC1253FDA000F70439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "EngineRoom-OSX";
+			targetProxy = 04FB83DB1253FDA000F70439 /* PBXContainerItemProxy */;
+		};
 		050309A41201B1AB00E846EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0508536B11F8A935004A5D2A /* AFCache */;
@@ -1348,6 +1395,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "AFCACHE_LOGGING_ENABLED=1";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
