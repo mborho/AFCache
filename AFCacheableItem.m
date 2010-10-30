@@ -61,7 +61,7 @@
         NSError* err = nil;
         NSDictionary* attr = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:&err];
         if (nil != err) {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"Error getting file attributes: %@", err);
 #endif			
             return nil;
@@ -72,7 +72,7 @@
             uint64_t realContentLength = [self getContentLengthFromFile];
             
             if (realContentLength == 0 || realContentLength != fileSize) {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"item not ready: %@", self.filename);
 #endif			
 				cacheStatus = kCacheStatusDownloading;
@@ -133,7 +133,7 @@
 		// get all headers from response
 		NSDictionary *headers = [(NSHTTPURLResponse *) response allHeaderFields];
 		
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
 		// log headers
 		NSLog(@"status code: %d", statusCode);
 		for (NSString *key in[headers allKeys]) {
@@ -256,7 +256,7 @@
 	[self handleResponse:response];
 	
 	if (validUntil && !loadedFromOfflineCache) {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
 		NSLog(@"Setting info for Object at %@ to %@", [url absoluteString], [info description]);
 #endif
 #if USE_ASSERTS		
@@ -339,7 +339,7 @@
 		// and only if we're not in offline mode.
 		
 		if (validUntil && !loadedFromOfflineCache) {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
 			NSLog(@"Storing object for URL: %@", [url absoluteString]);
 #endif
 			// Put the object into the cache			
@@ -434,7 +434,7 @@
 	// The cache MUST attach Warning 113 to any response whose age is more than 24 hours if such warning has not already been added.
 	
 	BOOL fresh = (freshness_lifetime > current_age);
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
 	NSLog(@"freshness_lifetime: %@", [NSDate dateWithTimeIntervalSinceReferenceDate: freshness_lifetime]);
 	NSLog(@"current_age: %@", [NSDate dateWithTimeIntervalSinceReferenceDate: current_age]);
 #endif
@@ -461,7 +461,7 @@
                            sizeof(uint64_t),
                            0, 0))
         {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"Could not set contentLength attribute on %@", [self filename]);
 #endif
         }
@@ -473,7 +473,7 @@
                            sizeof(downloading),
                            0, 0))
         {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"Could not set downloading attribute on %@", [self filename]);
 #endif
         }
@@ -493,14 +493,14 @@
                            sizeof(uint64_t),
                            0, 0))
         {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"Could not set contentLength attribute on %@, errno = %ld", [self filename], (long)errno );
 #endif
         }
 
         if (0 != fremovexattr(fd, kAFCacheDownloadingFileAttribute, 0))
         {
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
             NSLog(@"Could not remove downloading attribute on %@, errno = %ld", [self filename], (long)errno );
 #endif
         }
@@ -538,7 +538,7 @@
 								  0, 0);
 	if (sizeof(realContentLength) != size )
 	{
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
         NSLog(@"Could not get content lenth attribute from file %@. This may be bad (errno = %ld",
               [self.cache filePathForURL:self.url], (long)errno );
 #endif

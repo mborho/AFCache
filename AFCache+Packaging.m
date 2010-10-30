@@ -72,7 +72,7 @@ enum ManifestKeys {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
     [NSThread setThreadPriority:0.0];
     
-#ifdef AFCACHE_LOGGING_ENABLED
+#if AFCACHE_LOGGING_ENABLED
     NSLog(@"starting to unzip archive");
 #endif
     

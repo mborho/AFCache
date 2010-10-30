@@ -30,7 +30,6 @@
 // max cache item size in bytes
 #define kAFCacheDefaultMaxFileSize 1000000
 
-#define AFCACHE_LOGGING_ENABLED true
 #define kHTTPHeaderIfModifiedSince @"If-Modified-Since"
 #define kHTTPHeaderIfNoneMatch @"If-None-Match"
 
